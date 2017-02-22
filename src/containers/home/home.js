@@ -14,7 +14,7 @@ class HomeContainer extends Component {
 	render() {
 		return (
 			<View style={ commonStyle.container }>
-				<NavigatorBar 
+				<NavigatorBar
 					title='page1'
 					firstLevelIconFont='&#xe64c;'
 					secondLevelIconFont='&#xe677;'

@@ -23,12 +23,17 @@ export default class NavigatorBar extends React.Component {
 	}
 
 	componentWillMount() {
-		if (width > 375 ) {
-			this.adjustToolBarHeigth = { height: 93 };
-			this.adjustStaBarHeight = { marginTop: 27 };
+		if (Platform.OS === 'ios') {
+			if (width > 375) {
+				this.adjustToolBarHeigth = { height: 93 };
+				this.adjustStaBarHeight = { marginTop: 27 };
+			} else {
+				this.adjustToolBarHeigth = { height: 64 };
+				this.adjustStaBarHeight = { marginTop: 20 };
+			}
 		} else {
-			this.adjustToolBarHeigth = { height: 64 };
-			this.adjustStaBarHeight = { marginTop: 20 };
+			this.adjustToolBarHeigth = { height: 50 };
+			this.adjustStaBarHeight = { marginTop: 0 };			
 		}
 	}
 
