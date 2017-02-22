@@ -82,14 +82,20 @@ export default class NavigatorBar extends React.Component {
 	_renderOptView() {
 		const { firstLevelIconFont, secondLevelIconFont,
 			firstLevelIconFontStyle, secondLevelIconFontStyle, optTitle,
-			optTitleStyle, } = this.props;
+			optTitleStyle, firstLevelClick, secondLevelClick } = this.props;
 		if (firstLevelIconFont && secondLevelIconFont) {
 			return (
 				<View style={ styles.optMenuView }>
-					<TouchableOpacity style={ styles.firstLevelView }>
+					<TouchableOpacity 
+						activeOpacity={ 1 }
+						onPress={ secondLevelClick }
+						style={ styles.firstLevelView }>
 						<Text style={ [styles.optIcon, firstLevelIconFontStyle] }>{ firstLevelIconFont }</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={ styles.secondLevelView }>
+					<TouchableOpacity 
+						activeOpacity={ 1 }
+						onPress={ firstLevelClick }					
+						style={ styles.secondLevelView }>
 						<Text style={ [styles.optIcon, secondLevelIconFontStyle] }>{ secondLevelIconFont }</Text>
 					</TouchableOpacity>
 				</View>
@@ -97,10 +103,16 @@ export default class NavigatorBar extends React.Component {
 		} else if (firstLevelIconFont && optTitle) {
 			return (
 				<View style={ styles.optMenuView }>
-					<TouchableOpacity style={ styles.firstLevelView }>
+					<TouchableOpacity 
+						activeOpacity={ 1 }
+						onPress={ secondLevelClick }					
+						style={ styles.firstLevelView }>
 						<Text style={ [styles.optIcon, firstLevelIconFontStyle] }>{ firstLevelIconFont }</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={ styles.secondLevelView }>
+					<TouchableOpacity 
+						activeOpacity={ 1 }
+						onPress={ firstLevelClick }					
+						style={ styles.secondLevelView }>
 						<Text style={ [styles.optTitle, optTitleStyle] }>{ optTitle }</Text>
 					</TouchableOpacity>
 				</View>
@@ -108,7 +120,10 @@ export default class NavigatorBar extends React.Component {
 		} else if (firstLevelIconFont) {
 			return (
 				<View style={ styles.optMenuView }>
-					<TouchableOpacity style={ styles.firstLevelView }>
+					<TouchableOpacity 
+						activeOpacity={ 1 }
+						onPress={ firstLevelClick }					
+						style={ styles.firstLevelView }>
 						<Text style={ [styles.optIcon, firstLevelIconFontStyle] }>{ firstLevelIconFont }</Text>
 					</TouchableOpacity>
 				</View>
@@ -116,7 +131,10 @@ export default class NavigatorBar extends React.Component {
 		} else if (optTitle) {
 			return (
 				<View style={ styles.optMenuView }>
-					<TouchableOpacity style={ styles.firstLevelView }>
+					<TouchableOpacity 
+						activeOpacity={ 1 }
+						onPress={ firstLevelClick }					
+						style={ styles.firstLevelView }>
 						<Text style={ [styles.optTitle, optTitleStyle] }>{ optTitle }</Text>
 					</TouchableOpacity>
 				</View>

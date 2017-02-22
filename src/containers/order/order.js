@@ -9,16 +9,19 @@ class OrderContainer extends Component {
 
 	constructor(props) {
 	  super(props);
+	  this.title = '订单';
 	}
 
 	render() {
 		return (
 			<View style={ [commonStyle.container, { alignItems: 'center', justifyContent: 'center' }] }>
 				<NavigatorBar 
-					title='page3'
-					hiddenBackIcon={ true } />
+					title={ this.title }
+					firstLevelIconFont='&#xe64c;'
+					hiddenBackIcon={ true } 
+					firstLevelClick={ () => console.log(1111) }/>
 				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-					<Text>order page</Text>
+					<Text>订单</Text>
 				</View>
 			</View>
 		);

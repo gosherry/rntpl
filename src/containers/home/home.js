@@ -9,18 +9,21 @@ class HomeContainer extends Component {
 
 	constructor(props) {
 	  super(props);
+		this.title = '首页';
 	}
 
 	render() {
 		return (
 			<View style={ commonStyle.container }>
 				<NavigatorBar
-					title='page1'
+					title={ this.title }
 					firstLevelIconFont='&#xe64c;'
 					secondLevelIconFont='&#xe677;'
-					hiddenBackIcon={ true } />
+					hiddenBackIcon={ true } 
+					firstLevelClick={ () => console.log(1111) }
+					secondLevelClick={ () => console.log(222) }/>
 				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-					<Text>home page</Text>
+					<Text>首页</Text>
 				</View>
 			</View>
 		);

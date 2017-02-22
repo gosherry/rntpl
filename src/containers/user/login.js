@@ -10,13 +10,14 @@ class HomeContainer extends Component {
 
 	constructor(props) {
 	  super(props);
+	  this.title = props.router.getCurrentRoute().title;
 	}
 
 	render() {
 		return (
 			<View style={ [commonStyle.container, { alignItems: 'center', justifyContent: 'center' }] }>
 				<NavigatorBar
-					title='登录'
+					title={ this.title }
 					router={ this.props.router }/>
 				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 					<Text>login page</Text>

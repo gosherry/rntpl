@@ -27,7 +27,7 @@ export default class Tabar extends Component {
 		}
     return (
       <Image style={ styles.badgeBg } source={ BadgeViewIcon }>
-			<Text style={ styles.badgeText }>{ badgeCount }</Text>
+				<Text style={ styles.badgeText }>{ badgeCount }</Text>
       </Image>
     );
 	}
@@ -44,13 +44,13 @@ export default class Tabar extends Component {
 	 */
 	_renderContainer(key) {
 		switch(key) {
-			case 'page1': 
+			case 'home': 
 				return (<HomeContainer { ...this.props } />);
-			case 'page2':
+			case 'find':
 				return (<FindContainer { ...this.props } />);
-			case 'page3':
+			case 'order':
 				return (<OrderContainer { ...this.props } />);
-			case 'page4':
+			case 'mine':
 				return (<CenterContainer { ...this.props } />);
 			default: 
 				return (<HomeContainer { ...this.props } />);
@@ -77,7 +77,7 @@ export default class Tabar extends Component {
 					<View style={{ flex: 1 }}>
 							{ this._renderContainer(item.get('key')) }
 					</View>
-				</TabNavigator.Item>				
+				</TabNavigator.Item>
 			);
 		});
 		return (

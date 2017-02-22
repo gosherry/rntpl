@@ -5,35 +5,35 @@ import HomeRenderIcon from '../../assets/img/bar_home_nomarl.png'
 import HomePressedIcon from '../../assets/img/bar_home_pressed.png'
 
 const initialState = Immutable.fromJS({
-	currentTab: 'page1',
+	currentTab: 'home',
 	routes: [
 		{
-      title: 'page1',
-      key: 'page1',
+      title: '首页',
+      key: 'home',
       badgeCount: 0,
       withStatusBar: false,
       renderIcon: HomeRenderIcon,
       renderSelectedIcon: HomePressedIcon,
 	  },
 		{
-      title: 'page2',
-      key: 'page2',
+      title: '发现',
+      key: 'find',
       badgeCount: 0,
       withStatusBar: true,
       renderIcon: HomeRenderIcon,
       renderSelectedIcon: HomePressedIcon,
 	  },
 		{
-      title: 'page3',
-      key: 'page3',
+      title: '订单',
+      key: 'order',
       badgeCount: 2,
       withStatusBar: true,
       renderIcon: HomeRenderIcon,
       renderSelectedIcon: HomePressedIcon,
 	  },
 		{
-      title: 'page4',
-      key: 'page4',
+      title: '我的',
+      key: 'mine',
       badgeCount: 0,
       withStatusBar: false,
       renderIcon: HomeRenderIcon,

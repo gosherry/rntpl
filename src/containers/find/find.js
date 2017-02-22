@@ -9,18 +9,21 @@ class FindContainer extends Component {
 
 	constructor(props) {
 	  super(props);
+	  this.title = '发现';
 	}
 
 	render() {
 		return (
 			<View style={ [commonStyle.container, { alignItems: 'center', justifyContent: 'center' }] }>
 				<NavigatorBar
-					title='page2'
+					title={ this.title }
 					optTitle='完成'
 					firstLevelIconFont='&#xe64c;'
-					hiddenBackIcon={ true } />
+					hiddenBackIcon={ true }
+					firstLevelClick={ () => console.log(1111) }
+					secondLevelClick={ () => console.log(222) } />
 				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-					<Text>find page</Text>
+					<Text>发现</Text>
 				</View>
 			</View>
 		);
