@@ -23,7 +23,6 @@ class HomeContainer extends Component {
 					<Text>login page</Text>
 				</View>
 			</View>
-
 		);
 	}
 }
