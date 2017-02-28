@@ -15,7 +15,7 @@
 
 这个router组件里主要做的事情就是控制我们程序里的所有路由。
 
-> 如果童鞋们想把自己的醒目用`react-native-redux`替换，可以clone到本地，然后在里面添加自己的东西，由于这个项目很简单，只是集成了redux，所有可以放心的定制自己风格的框架。
+> 如果童鞋们想把自己的项目用`react-native-redux`替换，可以clone到本地，然后在里面添加自己的东西，由于这个项目很简单，只是集成了redux，所有可以放心的定制自己风格的框架。
 
 > 发现有的童鞋clone下来项目老是`Unable resolve module`, 提醒一下千万别忘了`npm install` 或者 `yarn`
 
