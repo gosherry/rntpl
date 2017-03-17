@@ -24,6 +24,7 @@ class HomeContainer extends Component {
 					secondLevelClick={ () => console.log(222) }/>
 				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 					<Text>首页</Text>
+					
 				</View>
 			</View>
 		);

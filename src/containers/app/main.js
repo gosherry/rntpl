@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Immutable from 'immutable';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Tabar from '../../components/app/tabar';
 import { changeTabar } from '../../action/app';
 import commonStyle from '../../../assets/css/common';
@@ -30,11 +30,11 @@ class MainContainer extends Component {
 }
 
 function mapStateToProps(state) {
-	const { app } = state;
-	return {
-		routes: app.get('routes'),
-		currentTab: app.get('currentTab'),
-	};
+		const { app } = state;
+		return {
+			routes: app.get('routes'),
+			currentTab: app.get('currentTab'),
+		};
 }
 
 export default connect(mapStateToProps)(MainContainer);

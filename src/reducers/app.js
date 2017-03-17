@@ -6,6 +6,7 @@ import HomePressedIcon from '../../assets/img/bar_home_pressed.png'
 
 const initialState = Immutable.fromJS({
 	currentTab: 'home',
+  cacheData: [],
 	routes: [
 		{
       title: '首页',
@@ -45,8 +46,12 @@ const initialState = Immutable.fromJS({
 export default (state = initialState, action) => {
 	let _state = state;
   switch (action.type) {
-		case ActionTypes.CHANGE_TAB:
+    case ActionTypes.CHANGE_TAB:
       _state = _state.set('currentTab', action.payload.tab);
+      return _state;
+    case ActionTypes.FETCH_DATA:
+      console.log('---action ', action.payload);
+      _state = _state.set('cacheData', action.payload);
       return _state;
     default :
       return state;

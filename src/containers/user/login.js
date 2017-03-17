@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import commonStyle from '../../../assets/css/common';
 import NavigatorBar from '../../components/common/navigatorbar';
 import PNG from '../../../assets/img/message_num_bg.png';
+import { fecthData } from '../../action/user';
 
 class HomeContainer extends Component {
 
@@ -13,7 +14,13 @@ class HomeContainer extends Component {
 	  this.title = props.router.getCurrentRoute().title;
 	}
 
+	componentDidMount() {
+		// 做一些网络请求操作
+		this.props._fecthData();	
+	}
+
 	render() {
+		console.log('====-=-=--==-', this.props.datas);
 		return (
 			<View style={ [commonStyle.container, { alignItems: 'center', justifyContent: 'center' }] }>
 				<NavigatorBar
@@ -27,4 +34,19 @@ class HomeContainer extends Component {
 	}
 }
 
-export default connect()(HomeContainer);
+function mapStateToPorps(state) {
+	const { app } = state;
+	return {
+		datas: app.get('cacheData'),
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		_fecthData: () => {
+			dispatch(fecthData());
+		}	
+	}
+}
+
+export default connect(mapStateToPorps, mapDispatchToProps)(HomeContainer);
